@@ -1,0 +1,69 @@
+'''
+BBM Interview Q#2:
+
+The problem is that given a list L of size n, and a target element t. Remove all occurrences of t by manually shifting
+towards the end of the list, and returning the reduced size of the list.
+
+The elements are technically not removed , but are just shifted to the end of the list, and a reduced array size is returned
+so that the programmer can continue to use the starting part of the array which does not contain the target element.
+'''
+
+def removeTarget(L,t,n):
+    i=0
+
+    while i<n:
+        if L[i]==t:
+            for j in range(i+1,n):
+                L[j],L[j-1]=L[j-1],L[j]
+            n-=1
+        if L[i]!=t:   # To handle edge cases of adjacent elements being target elements, which
+            i+=1      # hence gets shifted back and gets ignored. 
+        
+    
+    return n
+
+
+
+def main():
+    L=[2,2,2]
+    n=len(L)
+    print n
+    print L
+    print removeTarget(L,2,n)
+    print L
+
+    L=[1,2,2]
+    n=len(L)
+    print n
+    print L
+    print removeTarget(L,2,n)
+    print L
+
+    L=[1,2,3,2,2,2]
+    n=len(L)
+    print n
+    print L
+    print removeTarget(L,2,n)
+    print L
+
+    L=[2,2,2,1,4,5,7]
+    n=len(L)
+    print n
+    print L
+    print removeTarget(L,2,n)
+    print L
+
+    L=[1,0,-1,2,5,3,1,5]
+    n=len(L)
+    print n
+    print L
+    print removeTarget(L,2,n)
+    print L
+
+    L=[2,0,1,2,1,2,3,2,2,2]
+    n=len(L)
+    print n
+    print L
+    print removeTarget(L,2,n)
+    print L
+main()

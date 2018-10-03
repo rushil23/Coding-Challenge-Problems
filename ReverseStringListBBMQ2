@@ -1,0 +1,72 @@
+#BBM Interview Q#1:
+
+'''
+Reverse a string character list, but do not change position of symbols / special characters.
+
+Example : [a,b,@,#,c,!,d,!] ---> [d,c,@,#,b,!a,!]
+'''
+
+
+def makeList(s,L):
+    
+    for ch in s:
+        L.append(ch)
+
+def swap(L,a,b):
+    L[a],L[b]=L[b],L[a]
+
+def reverseList(L,n):
+    lo=0
+    hi=n-1
+    print L
+    while lo<hi:
+        if L[lo].isalpha() and L[hi].isalpha():
+            swap(L,lo,hi)
+            lo+=1
+            hi-=1
+        elif L[lo].isalpha():
+            hi-=1
+        else:
+            lo+=1
+
+    print L
+
+
+def main():
+
+    #Test Cases:
+    
+
+    s="#!qw@#er"
+    L=[]
+    makeList(s,L)
+    reverseList(L,len(L))
+
+    print "-----"
+
+    s="#!aqw@#er"
+    L=[]
+    makeList(s,L)
+    reverseList(L,len(L))
+
+    print "-----"
+    s="a#!qw@#er"
+    L=[]
+    makeList(s,L)
+    reverseList(L,len(L))
+
+    print "-----"
+    s="ab#!qw@#er"
+    L=[]
+    makeList(s,L)
+    reverseList(L,len(L))
+
+    print "-----"
+
+    s="#!qw@#er%a"
+    L=[]
+    makeList(s,L)
+    reverseList(L,len(L))
+
+    print "-----"
+main()
