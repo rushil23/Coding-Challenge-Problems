@@ -3,7 +3,7 @@
 '''
 Reverse a string character list, but do not change position of symbols / special characters.
 
-Example : [a,b,@,#,c,!,d,!] ---> [d,c,@,#,b,!a,!]
+Example : [a,b,@,#,c,!,d,!] ---> [d,c,@,#,b,!a,!] 
 '''
 
 
